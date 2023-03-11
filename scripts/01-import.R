@@ -2,4 +2,5 @@ library("tidyverse")
 library("rio")
 library("here")
 
-WVS <- rio::import(here::here("data", "WVS_trends_3_0.dta"))
+
+ERD <- haven::read_dta(here::here("data", "ERD e 2020 no labels.dta"))

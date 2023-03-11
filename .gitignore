@@ -27,5 +27,6 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 # Project Specific Files
-WVS_trends_3_0.dta
+/data
 OSF.Rproj
+*.dta
