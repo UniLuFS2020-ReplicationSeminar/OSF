@@ -26,4 +26,6 @@ vignettes/*.pdf
 *.knit.md
 # R Environment Variables
 .Renviron
-/data
+
+# Project Specific Files
+WVS_trends_3_0.dta
