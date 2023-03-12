@@ -2,6 +2,8 @@ library("tidyverse")
 library("rio")
 library("here")
 
+# Download .dta file here:
+# https://erdda.se/datafiles/erd/ERD%20e%202020%20no%20labels.dta
 ERD <- haven::read_dta(here::here("data", "ERD e 2020 no labels.dta"))
 
 #clean variables of unemployment (v703e in; v705e out) for defined borders according to codebook
