@@ -11,8 +11,11 @@ To what extent does the type of cabinet affect the unemployment in a country ove
 Hypothesis:
 The type of cabinet is not enough to explain unemployment.
 
-## Task Allocation
-
-- Simon: RQ, hypothesis, visualisation
-- Olga: Regression + hypothesis testing
-- Fabian: Import Rmarkdown report
+## To Do List
+- [ ] Data import: @fabianaiolfi
+- [x] Research question: @simonweigold
+- [x] Hypothesis: @simonweigold
+- [ ] Visualisation: @simonweigold
+- [ ] Regression: @Oldscha
+- [ ] Hypothesis testing: @Oldscha
+- [ ] Rmarkdown report: @fabianaiolfi
