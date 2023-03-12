@@ -1,5 +1,5 @@
 #scatter plot over time in conservatism
-ERD %>%
+plot_conservatism <- ERD %>%
   filter(v415e == 1) %>%
   ggplot() +
   geom_point(aes(x=v005e, y=v705e)) +
@@ -9,7 +9,7 @@ ERD %>%
   theme_minimal()
 
 #scatter plot over time in socialism
-ERD %>%
+plot_socialism <- ERD %>%
   filter(v416e == 0) %>%
   ggplot() +
   geom_point(aes(x=v005e, y=v705e)) +
@@ -23,7 +23,7 @@ ERD$conservative[ERD$v415e == 1] <- "conservative"
 ERD$conservative[ERD$v415e == 0] <- "socialist"
 
 #boxplot unemployment in different types of cabinets
-ERD %>%
+plot_unemployment <- ERD %>%
   ggplot() +
   geom_boxplot(aes(x=conservative, y=v705e)) +
   ggtitle("unemployment in countries with different types of cabinets") +

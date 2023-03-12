@@ -14,5 +14,11 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Methods
 
 ## Results
+```{r}
+plot_conservatism
+plot_socialism
+plot_unemployment
+```
+
 
 ## Discussion
