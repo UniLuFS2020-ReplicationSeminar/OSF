@@ -12,10 +12,11 @@ Hypothesis:
 The type of cabinet is not enough to explain unemployment.
 
 ## To Do List
-- [ ] Data import: @fabianaiolfi
+- [x] Data import: @fabianaiolfi
 - [x] Research question: @simonweigold
 - [x] Hypothesis: @simonweigold
-- [ ] Visualisation: @simonweigold
+- [x] Visualisation: @simonweigold
 - [ ] Regression: @Oldscha
 - [ ] Hypothesis testing: @Oldscha
 - [ ] Rmarkdown report: @fabianaiolfi
+- [ ] Submit to Andrea: @fabianaiolfi
