@@ -11,8 +11,6 @@ plot_conservatism <- ERD %>%
 #scatter plot over time in socialism
 plot_socialism <- ERD %>%
   filter(v416e == 0) %>%
-=======
-ERD %>%
   filter(v416e == 1) %>%
   ggplot() +
   geom_point(aes(x=v005e, y=v705e)) +
@@ -28,8 +26,6 @@ ERD$majority_cabinet[ERD$v416e == 1] <- "socialist"
 
 #boxplot unemployment in different types of cabinets
 plot_unemployment <- ERD %>%
-=======
-ERD %>%
   filter(! is.na(majority_cabinet)) %>%
   ggplot() +
   geom_boxplot(aes(x=majority_cabinet, y=v705e)) +
