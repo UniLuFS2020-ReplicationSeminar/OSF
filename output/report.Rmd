@@ -21,9 +21,9 @@ To test our hypothesis, we built a [enter model type here]. Our dependent variab
 
 ## Results
 ```{r}
-#plot_conservatism
-#plot_socialism
-#plot_unemployment
+plot_conservatism
+plot_socialism
+plot_unemployment
 ```
 Looking at both scatter plots, we cannot discern an obvious pattern between the two cabinet types. Furthermore, the box plot reveals an almost identical spread of unemployment values between the two types of cabinets.
 
