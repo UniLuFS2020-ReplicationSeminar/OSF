@@ -10,9 +10,24 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Introduction
+How does the type of cabinet affect a country’s unemployment? In this brief research project, we evaluate the relationship between the macro economy of countries and political systems. In our operationalisation we use variables which convey information about the unemployment, type of cabinet and time. We then go on to compare unemployment over time between countries with a mostly conservative cabinet versus countries with a mostly socialist cabinet.
+
+We assume that if time has a bigger impact on the unemployment than the type of cabinet, then there must be other factors which are more important in determining the unemployment rate of a country. This leads to the following hypothesis:
+
+**Hypothesis:** A country’s cabinet type is not enough to explain unemployment.
 
 ## Methods
+To test our hypothesis, we built a [enter model type here]. Our dependent variable is a country’s unemployment. The independent variable is dichotomous and conveys a country’s cabinet type. A cabinet can be either conservative or socialist.
 
 ## Results
+```{r}
+#plot_conservatism
+#plot_socialism
+#plot_unemployment
+```
+Looking at both scatter plots, we cannot discern an obvious pattern between the two cabinet types. Furthermore, the box plot reveals an almost identical spread of unemployment values between the two types of cabinets.
+
+The results from the model show that a country’s cabinet type does not have enough explanatory power to predict the same country’s level of unemployment. Thus we can accept our hypothesis.
 
 ## Discussion
+Our results make sense as the cause for unemployment has several factors and are not limited to a country’s cabinet type.
