@@ -7,7 +7,28 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
+library("tidyverse")
+library("rio")
+library("here")
+library("stargazer")
 ```
+
+```{r Data Import, include=FALSE}
+# Download .dta file here:
+# https://erdda.se/datafiles/erd/ERD%20e%202020%20no%20labels.dta
+ERD <- haven::read_dta(here::here("data", "ERD e 2020 no labels.dta"))
+
+#clean variables of unemployment (v703e in; v705e out) for defined borders according to codebook
+ERD <- ERD %>% 
+  filter(v703e >= 0 & v703e <= 22.2) %>%
+  filter(v705e >= 0.1 & v705e <= 22.2)
+
+#remove missing values
+ERD <- ERD %>%
+  filter(v415e != 88888)
+```
+
 
 ## Introduction
 How does the type of cabinet affect a country’s unemployment? In this brief research project, we evaluate the relationship between the macro economy of countries and political systems. In our operationalisation we use variables which convey information about the unemployment, type of cabinet and time. We then go on to compare unemployment over time between countries with a mostly conservative cabinet versus countries with a mostly socialist cabinet.
@@ -17,17 +38,32 @@ We assume that if time has a bigger impact on the unemployment than the type of 
 **Hypothesis:** A country’s cabinet type is not enough to explain unemployment.
 
 ## Methods
-To test our hypothesis, we built a [enter model type here]. Our dependent variable is a country’s unemployment. The independent variable is dichotomous and conveys a country’s cabinet type. A cabinet can be either conservative or socialist.
+To test our hypothesis, we built a linear regression model. Our dependent variable is a country’s unemployment. The independent variable is dichotomous and conveys a country’s cabinet type. A cabinet can be either conservative or socialist.
 
 ## Results
-```{r}
-plot_conservatism
-plot_socialism
-plot_unemployment
+```{r echo=FALSE}
+#plot_conservatism
+#plot_socialism
+#plot_unemployment
 ```
 Looking at both scatter plots, we cannot discern an obvious pattern between the two cabinet types. Furthermore, the box plot reveals an almost identical spread of unemployment values between the two types of cabinets.
 
-The results from the model show that a country’s cabinet type does not have enough explanatory power to predict the same country’s level of unemployment. Thus we can accept our hypothesis.
+```{r echo=FALSE, warning=FALSE, results = 'asis'}
+ERD$dummy_majority_cabinet[ERD$v415e == 1] <- 1
+ERD$dummy_majority_cabinet[ERD$v416e == 1] <- 0
+
+bi_regress <- lm(v705e ~ dummy_majority_cabinet, data = ERD)
+
+stargazer(bi_regress,
+          type = "html",
+          style = "apsr") 
+
+plot(x = ERD$dummy_majority_cabinet, y = ERD$v705e)
+abline(bi_regress)
+```
+
+
+The results from the model show that a country’s cabinet type does not have enough explanatory power to predict the country’s level of unemployment. The coefficient `dummy_majority_cabinet` is not statistically significant at the 0.05 level. Thus we can accept our hypothesis.
 
 ## Discussion
 Our results make sense as the cause for unemployment has several factors and are not limited to a country’s cabinet type.
