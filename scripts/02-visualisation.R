@@ -10,7 +10,6 @@ plot_conservatism <- ERD %>%
 
 #scatter plot over time in socialism
 plot_socialism <- ERD %>%
-  filter(v416e == 0) %>%
   filter(v416e == 1) %>%
   ggplot() +
   geom_point(aes(x=v005e, y=v705e)) +
