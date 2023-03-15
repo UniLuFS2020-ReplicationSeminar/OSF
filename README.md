@@ -17,6 +17,6 @@ The type of cabinet is not enough to explain unemployment.
 - [x] Hypothesis: @simonweigold
 - [x] Visualisation: @simonweigold
 - [x] Regression: @Oldscha
-- [ ] Hypothesis testing: @Oldscha
+- [x] Hypothesis testing: @Oldscha
 - [ ] Rmarkdown report: @fabianaiolfi
 - [ ] Submit to Andrea: @fabianaiolfi
